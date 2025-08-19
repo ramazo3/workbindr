@@ -369,7 +369,6 @@
             </div>
         </section>
 
-        <!-- Moat, Financials, and CTA Section -->
         <section class="my-24">
             <h2 class="text-3xl font-bold text-center mb-12">Our Defensibility: The Unassailable Moat</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto">
@@ -433,181 +432,239 @@
 
     </div>
 
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <span id="modal-close" class="modal-close">&times;</span>
+            <h3 id="modal-title" class="text-2xl font-bold mb-4 text-blue-300"></h3>
+            <p id="modal-description" class="text-gray-300"></p>
+        </div>
+    </div>
+
     <script>
-        const growthChartCtx = document.getElementById('growthChart').getContext('2d');
-        const growthChart = new Chart(growthChartCtx, {
-            type: 'bar',
-            data: {
-                labels: ['End of Phase 1', 'End of Phase 2', 'End of Phase 3'],
-                datasets: [{
-                    label: 'Number of Micro-Apps',
-                    data: [1, 5, 100],
-                    backgroundColor: [
-                        'rgba(255, 124, 67, 0.6)',
-                        'rgba(255, 166, 0, 0.6)',
-                        'rgba(0, 191, 255, 0.6)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 124, 67, 1)',
-                        'rgba(255, 166, 0, 1)',
-                        'rgba(0, 191, 255, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        grid: {
-                            color: 'rgba(240, 244, 248, 0.1)'
-                        },
-                        ticks: {
-                            color: '#f0f4f8'
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        ticks: {
-                            color: '#f0f4f8'
-                        }
+        document.addEventListener('DOMContentLoaded', function() {
+            function wrapLabels(label, maxWidth) {
+                if (typeof label !== 'string') return label;
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
                     }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            }
+
+            const askCtx = document.getElementById('askChart').getContext('2d');
+            const askChart = new Chart(askCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Développement (70%)', 'Marketing & GTM (20%)', 'Légal et Opérations (10%)'],
+                    datasets: [{
+                        data: [70, 20, 10],
+                        backgroundColor: [
+                            '#ff7c43',
+                            '#ffa600',
+                            '#00bfff'
+                        ],
+                        hoverOffset: 4
+                    }]
                 },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                            title: function(tooltipItems) {
-                                const item = tooltipItems[0];
-                                let label = item.chart.data.labels[item.dataIndex];
-                                if (Array.isArray(label)) {
-                                  return label.join(' ');
-                                } else {
-                                  return label;
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#f0f4f8',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
-        });
+            });
 
-        const askCtx = document.getElementById('askChart').getContext('2d');
-        const askChart = new Chart(askCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Personnel (70%)', 'Marketing & GTM (20%)', 'Legal & Operations (10%)'],
-                datasets: [{
-                    data: [70, 20, 10],
-                    backgroundColor: [
-                        '#ff7c43',
-                        '#ffa600',
-                        '#00bfff'
-                    ],
-                    hoverOffset: 4
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            color: '#f0f4f8'
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            title: function(tooltipItems) {
-                                const item = tooltipItems[0];
-                                let label = item.chart.data.labels[item.dataIndex];
-                                if (Array.isArray(label)) {
-                                  return label.join(' ');
-                                } else {
-                                  return label;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
-        const projCtx = document.getElementById('projectionsChart').getContext('2d');
-        const projectionsChart = new Chart(projCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Year 1', 'Year 2', 'Year 3'],
-                datasets: [{
-                    label: 'Net Income',
-                    data: [-650000, 700000, 7000000],
-                    backgroundColor: ['#ff7c43', '#00bfff', '#00bfff'],
-                    borderColor: ['#ff7c43', '#00bfff', '#00bfff'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: false,
-                        grid: {
-                            color: 'rgba(240, 244, 248, 0.1)'
-                        },
-                        ticks: {
-                            color: '#f0f4f8',
-                            callback: function(value, index, values) {
-                                return '$' + (value/1000) + 'K';
-                            }
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        ticks: {
-                            color: '#f0f4f8'
-                        }
-                    }
+            const projCtx = document.getElementById('projectionsChart').getContext('2d');
+            const projectionsChart = new Chart(projCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Année 1', 'Année 2', 'Année 3'],
+                    datasets: [{
+                        label: 'Bénéfice Net',
+                        data: [-650000, 700000, 7000000],
+                        backgroundColor: ['#ff7c43', '#00bfff', '#00bfff'],
+                        borderColor: ['#ff7c43', '#00bfff', '#00bfff'],
+                        borderWidth: 1
+                    }]
                 },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                            title: function(tooltipItems) {
-                                const item = tooltipItems[0];
-                                let label = item.chart.data.labels[item.dataIndex];
-                                if (Array.isArray(label)) {
-                                  return label.join(' ');
-                                } else {
-                                  return label;
-                                }
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            grid: {
+                                color: 'rgba(240, 244, 248, 0.1)'
                             },
-                            label: function(tooltipItem) {
-                                let label = tooltipItem.dataset.label || '';
-                                if (label) {
-                                    label += ': ';
+                            ticks: {
+                                color: '#f0f4f8',
+                                callback: function(value) {
+                                    return '$' + (value/1000) + 'K';
                                 }
-                                label += '$' + tooltipItem.formattedValue;
-                                return label;
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#f0f4f8'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                },
+                                label: function(tooltipItem) {
+                                    let label = tooltipItem.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += '$' + tooltipItem.formattedValue;
+                                    return label;
+                                }
                             }
                         }
                     }
                 }
+            });
+
+            const growthChartCtx = document.getElementById('growthChart').getContext('2d');
+            const growthChart = new Chart(growthChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Fin de la phase 1', 'Fin de la phase 2', 'Fin de la phase 3'],
+                    datasets: [{
+                        label: 'Nombre de Micro-Apps',
+                        data: [1, 5, 100],
+                        backgroundColor: [
+                            'rgba(255, 124, 67, 0.6)',
+                            'rgba(255, 166, 0, 0.6)',
+                            'rgba(0, 191, 255, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 124, 67, 1)',
+                            'rgba(255, 166, 0, 1)',
+                            'rgba(0, 191, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(240, 244, 248, 0.1)'
+                            },
+                            ticks: {
+                                color: '#f0f4f8'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#f0f4f8'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const flowNodes = document.querySelectorAll('.flow-node');
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalClose = document.getElementById('modal-close');
+
+            function openModal(title, description) {
+                modalTitle.textContent = title;
+                modalDescription.textContent = description;
+                modalOverlay.classList.add('open');
             }
+
+            function closeModal() {
+                modalOverlay.classList.remove('open');
+            }
+
+            flowNodes.forEach(node => {
+                node.addEventListener('click', () => {
+                    const title = node.dataset.title;
+                    const description = node.dataset.description;
+                    openModal(title, description);
+                });
+            });
+
+            modalClose.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) {
+                    closeModal();
+                }
+            });
         });
-
     </script>
-
 </body>
 </html>
