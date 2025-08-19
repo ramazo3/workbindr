@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkBindr: The Decentralized Future of Business</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #001f3f; /* Dark Navy */
+            color: #f0f4f8;
+        }
+        .card {
+            background-color: #003366; /* Darker Blue */
+            border: 1px solid #004080; /* Slightly Lighter Blue Border */
+        }
+        .highlight-text {
+            color: #ffa600; /* Vibrant Orange */
+        }
+        .accent-bg {
+            background-color: #ff7c43; /* Vibrant Salmon */
+        }
+        .accent-border {
+            border-color: #ff7c43;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">WorkBindr</h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-300">A Paradigm Shift in Business Productivity</p>
+        </header>
+
+        <section class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-2">The Problem with Today's Business Software</h2>
+            <p class="text-center text-gray-400 max-w-3xl mx-auto mb-12">
+                Businesses operate in a digital world that is fragmented, costly, and controlled by a few large entities. This leads to **SaaS fatigue**, where employees are overwhelmed by numerous disconnected apps, driving up costs and hindering efficiency.
+                <br><br>
+                **Evidence of Pain:** In our work building over 52 corporate solutions, the most common request was for a unified data layer, not just another app. We found businesses struggle to leverage AI because no one has made a context-aware AI seamlessly accessible.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="card p-8 rounded-xl shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-4 text-center highlight-text">The Old Way: Centralized Chaos</h3>
+                    <p class="text-gray-300 text-center">Multiple apps, duplicated data, and high licensing fees create a complex and inefficient web of tools that don't communicate, trapping your most valuable asset: your data.</p>
+                </div>
+                <div class="card p-8 rounded-xl shadow-2xl border-2 accent-border">
+                    <h3 class="text-2xl font-bold mb-4 text-center highlight-text">The WorkBindr Way: A Unified Ecosystem</h3>
+                    <p class="text-gray-300 text-center">One platform, powered by a community. Micro-apps work together, data flows freely under your control, and AI provides intelligence across your entire business landscape.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-24">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Solution: A Decentralized Foundation</h2>
+            <p class="text-center text-gray-400 max-w-3xl mx-auto mb-12">WorkBindr is not just another app; it's a new foundation for business built on three powerful, interconnected pillars that ensure transparency, intelligence, and trust.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold mb-2">Decentralized Micro-App Ecosystem</h3>
+                    <p class="text-gray-400">An open marketplace where developers can build and monetize interoperable tools, creating a vibrant, ever-expanding suite of solutions.</p>
+                </div>
+                <div class="card p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl mb-4">🧠</div>
+                    <h3 class="text-xl font-bold mb-2">Business-Centric AI</h3>
+                    <p class="text-gray-400">A proprietary LLM that learns from your business data across all micro-apps to provide bespoke content and context-aware insights that no siloed tool can match.</p>
+                </div>
+                <div class="card p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="text-xl font-bold mb-2">On-Chain Governance & Trust</h3>
+                    <p class="text-gray-400">A transparent reputation system and DAO empowers users with true data ownership and a voice in the platform's future, rewarding valuable contributions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-24">
+            <h2 class="text-3xl font-bold text-center mb-12">How The Ecosystem Works</h2>
+            <p class="text-center text-gray-400 max-w-3xl mx-auto mb-12">Our platform creates a virtuous cycle. Developers are incentivized to build useful tools, businesses gain powerful capabilities, and the entire system becomes more intelligent and valuable with every interaction.</p>
+            <div class="card p-8 rounded-xl shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="text-4xl">👨‍💻</div>
+                        <h4 class="font-bold mt-2">Developers</h4>
+                        <p class="text-sm text-gray-400">Build & Monetize Micro-Apps via an open SDK.</p>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center text-4xl font-bold highlight-text">→</div>
+                     <div class="flex md:hidden items-center justify-center text-4xl font-bold highlight-text">↓</div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-4xl">🏢</div>
+                        <h4 class="font-bold mt-2">Businesses</h4>
+                        <p class="text-sm text-gray-400">Use interconnected apps to streamline work.</p>
+                    </div>
+                </div>
+                <div class="flex justify-center my-8 text-4xl font-bold highlight-text">↓</div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="flex flex-col items-center md:col-start-2">
+                        <div class="text-4xl">🔗</div>
+                        <h4 class="font-bold mt-2">Data & Interactions</h4>
+                        <p class="text-sm text-gray-400">All data flows into the secure, user-owned Distributed Atom Space (DAS).</p>
+                    </div>
+                </div>
+                 <div class="flex justify-center my-8 text-4xl font-bold highlight-text">↓</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                     <div class="flex flex-col items-center">
+                        <div class="text-4xl">🤖</div>
+                        <h4 class="font-bold mt-2">AI Learns & Assists</h4>
+                        <p class="text-sm text-gray-400">The LLM analyzes data from DAS to provide bespoke content and insights back to the business.</p>
+                    </div>
+                     <div class="flex flex-col items-center">
+                        <div class="text-4xl">🗳️</div>
+                        <h4 class="font-bold mt-2">DAO & Reputation</h4>
+                        <p class="text-sm text-gray-400">Contributions are recorded on-chain, rewarding developers and users, and guiding the platform's future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-24">
+            <h2 class="text-3xl font-bold text-center mb-12">Roadmap to Decentralization</h2>
+            <p class="text-center text-gray-400 max-w-3xl mx-auto mb-12">Our 12-month plan is designed to build a robust foundation, grow a vibrant community, and progressively decentralize the platform, ensuring long-term success and stability.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="card p-6 rounded-lg">
+                    <span class="accent-bg text-white font-bold text-xs py-1 px-3 rounded-full">PHASE 1</span>
+                    <h3 class="font-bold text-lg mt-4">Foundation (Months 1-3)</h3>
+                    <p class="text-sm text-gray-300 mt-2">Build the core decentralized framework, launch a Proof-of-Concept, and initiate the Digital Transformation Challenge.</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <span class="accent-bg text-white font-bold text-xs py-1 px-3 rounded-full">PHASE 2</span>
+                    <h3 class="font-bold text-lg mt-4">Ecosystem Growth (Months 4-6)</h3>
+                    <p class="text-sm text-gray-300 mt-2">Launch developer beta, deploy the on-chain reputation system, and transition the AI into a monetizable service.</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <span class="accent-bg text-white font-bold text-xs py-1 px-3 rounded-full">PHASE 3</span>
+                    <h3 class="font-bold text-lg mt-4">Full Launch (Months 7-12)</h3>
+                    <p class="text-sm text-gray-300 mt-2">Global public launch, ecosystem expansion with grants, and full rollout of the decentralized governance model (DAO).</p>
+                </div>
+            </div>
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-center mb-8">Projected Ecosystem Growth</h3>
+                <div class="card p-8 rounded-xl shadow-lg">
+                     <div class="chart-container">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-400 mt-4">The number of available micro-apps is projected to grow exponentially as the developer community expands, creating a powerful network effect.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section for Prototype & Instructions -->
+        <section class="my-24 text-center">
+            <h2 class="text-3xl font-bold mb-4">Experience the WorkBindr Demo</h2>
+            <p class="text-gray-400 max-w-3xl mx-auto mb-8">Get a hands-on feel for the platform's core functionalities. The prototype demonstrates how micro-apps and the AI assistant work together in a unified, intuitive interface.</p>
+            <a href="https://itinerecloud.com" target="_blank" class="accent-bg text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition-colors duration-200 shadow-xl">
+                Launch the Interactive Prototype
+            </a>
+            <div class="mt-8 text-left card p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
+                <h3 class="text-xl font-bold mb-4 highlight-text">How to Use the Prototype</h3>
+                <ol class="list-decimal list-inside text-gray-300 space-y-2">
+                    <li>Click the "Launch" button above to open the prototype.</li>
+                    <li>Explore the sidebar to navigate between different simulated micro-apps like the Dashboard, Customer Invoicing, and AI Assistant.</li>
+                    <li>In the **AI Assistant** section, try typing a business-related task (e.g., "Write a sales email for a new product launch") and click "Generate" to see our AI in action.</li>
+                    <li>Note the simulated Web3 elements in the sidebar, such as the On-Chain ID and Reputation Score, which bring our decentralized vision to life.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Moat, Financials, and CTA Section -->
+        <section class="my-24">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Defensibility: The Unassailable Moat</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto">
+                <div class="card p-6 rounded-xl shadow-lg flex flex-col items-center">
+                    <div class="text-4xl mb-4">🔗</div>
+                    <h3 class="font-bold text-xl mb-2">Network Effect</h3>
+                    <p class="text-sm text-gray-400">The platform's value grows with every new user and developer. Our reputation system is the core of this self-reinforcing community.</p>
+                </div>
+                <div class="card p-6 rounded-xl shadow-lg flex flex-col items-center">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h3 class="font-bold text-xl mb-2">Data as a Moat</h3>
+                    <p class="text-sm text-gray-400">User-owned, interconnected data in the SNET DAS is our unique intellectual property. It's the engine for our AI and a resource no competitor can acquire.</p>
+                </div>
+                <div class="card p-6 rounded-xl shadow-lg flex flex-col items-center">
+                    <div class="text-4xl mb-4">🛠️</div>
+                    <h3 class="font-bold text-xl mb-2">Technical Moat</h3>
+                    <p class="text-sm text-gray-400">Our strategic use of the SNET tech stack gives us a significant head start. Building a similar decentralized infrastructure from scratch is complex, time-consuming, and expensive.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-24">
+            <h2 class="text-3xl font-bold text-center mb-12">A Clear Path to Profitability & ROI</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+                <div class="card p-8 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl mb-4">The Ask: $1M Seed Funding</h3>
+                    <p class="text-sm text-gray-400 mb-4">Strategic allocation to accelerate our growth.</p>
+                    <div class="chart-container h-64 md:h-96">
+                        <canvas id="askChart"></canvas>
+                    </div>
+                </div>
+                <div class="card p-8 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl mb-4">Projections: 3-Year Financial Forecast</h3>
+                     <div class="chart-container h-64 md:h-96">
+                        <canvas id="projectionsChart"></canvas>
+                    </div>
+                     <div class="mt-8 text-center">
+                        <p class="text-lg font-bold highlight-text">Break-Even Point: End of Year 2</p>
+                        <ul class="mt-4 text-sm text-gray-400 list-disc list-inside space-y-1">
+                            <li>**Year 1:** Beta Launch & $650K Net Loss</li>
+                            <li>**Year 2:** 500+ Users & $700K Net Income</li>
+                            <li>**Year 3:** 50+ Micro-Apps & $7M+ Net Income</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="my-24 text-center">
+             <a href="https://docs.google.com/document/d/16u3m71cG-dIGCACOlZz7cgBD702y_tkRBLppsyeoVRk/edit?usp=sharing" target="_blank" class="text-gray-400 text-sm font-semibold hover:text-white transition-colors duration-200">
+                View Full Documentation
+            </a>
+        </section>
+
+        <footer class="text-center p-8 mt-16">
+            <p class="text-xl font-bold highlight-text mb-4">Join us in building the future of business.</p>
+            <a href="mailto:rama@deepfunding.ai" class="accent-bg text-white font-bold py-4 px-12 rounded-full text-xl hover:bg-orange-600 transition-colors duration-200 shadow-xl">
+                Invest in WorkBindr
+            </a>
+            <p class="mt-4 text-gray-400">Rama Zomaletho, Founder & Jan Horlings, Co-founder</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapLabels(label, maxWidth) {
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const growthChartCtx = document.getElementById('growthChart').getContext('2d');
+        const growthChart = new Chart(growthChartCtx, {
+            type: 'bar',
+            data: {
+                labels: ['End of Phase 1', 'End of Phase 2', 'End of Phase 3'],
+                datasets: [{
+                    label: 'Number of Micro-Apps',
+                    data: [1, 5, 100],
+                    backgroundColor: [
+                        'rgba(255, 124, 67, 0.6)',
+                        'rgba(255, 166, 0, 0.6)',
+                        'rgba(0, 191, 255, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 124, 67, 1)',
+                        'rgba(255, 166, 0, 1)',
+                        'rgba(0, 191, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(240, 244, 248, 0.1)'
+                        },
+                        ticks: {
+                            color: '#f0f4f8'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#f0f4f8'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const askCtx = document.getElementById('askChart').getContext('2d');
+        const askChart = new Chart(askCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Personnel (70%)', 'Marketing & GTM (20%)', 'Legal & Operations (10%)'],
+                datasets: [{
+                    data: [70, 20, 10],
+                    backgroundColor: [
+                        '#ff7c43',
+                        '#ffa600',
+                        '#00bfff'
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#f0f4f8'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const projCtx = document.getElementById('projectionsChart').getContext('2d');
+        const projectionsChart = new Chart(projCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3'],
+                datasets: [{
+                    label: 'Net Income',
+                    data: [-650000, 700000, 7000000],
+                    backgroundColor: ['#ff7c43', '#00bfff', '#00bfff'],
+                    borderColor: ['#ff7c43', '#00bfff', '#00bfff'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: {
+                            color: 'rgba(240, 244, 248, 0.1)'
+                        },
+                        ticks: {
+                            color: '#f0f4f8',
+                            callback: function(value, index, values) {
+                                return '$' + (value/1000) + 'K';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#f0f4f8'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            },
+                            label: function(tooltipItem) {
+                                let label = tooltipItem.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += '$' + tooltipItem.formattedValue;
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+
+</body>
+</html>
